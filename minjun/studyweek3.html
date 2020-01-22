@@ -57,7 +57,7 @@
             margin-right:15px;
             padding:5px;
             box-sizing:border-box;
-            border:1px solid skyblue;
+            border:1px solid green;
         }
 
         .ad{
@@ -85,14 +85,51 @@
         }
         
         aside{
-            float:right;
+            display:flex;
+            flex-direction:column;
             margin:0px;
         }
 
+        section{
+            display:flex;
+            flex-direction:row;
+        }
+
         .login{
-           width:246px;
+           width:330px;
            height:120px;
            border:1px solid lightgray;  
+           margin-top:10px;
+        }
+
+        button{
+            width:280px;
+            height:37px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            background-color:#03cf5d;
+            border:1px solid #03cf5d;
+            color:white;
+            font-size: 17px;
+            margin:auto;
+            vertical-align:middle;    
+            position: relative;
+            top:17%;   
+        }
+
+        .dbb{
+            width:330px;
+            height:140px;
+            border:1px solid lightgray;
+            margin-top:10px;
+        }
+        
+        .side{
+            width:330px;
+            height:152px;
+            border:1px solid lightgray;
+            margin-top:10px;
         }
 
 
@@ -126,13 +163,12 @@
             </article>
 
             <aside>
-                <div class="login">로그인</div>
-                <div>금융</div>
-                <div>사이드광고</div>
-            </aside>
-           
-            
-            
+                <div class="login">로그인
+                    <button>NAVER 로그인</button>
+                </div>
+                <div class="dbb">금융</div>
+                <div class="side">사이드광고</div>
+            </aside>            
         </section>
          
         <footer>
