@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Box Model</title>
+  <script src="https://kit.fontawesome.com/031722a6cc.js" crossorigin="anonymous"></script>
+  <style>
+    html,
+    body {
+      margin: 0px;
+      height: 100%;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .column {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin: 0px auto;
+      width: 1080px;
+      height: 100%;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      border: 1px solid green;
+      width: 380px;
+      padding: 5px;
+      margin-right: 15px;
+      height: 20px;
+    }
+
+    .column-25per {
+      width: 25%;
+      text-align: center;
+    }
+
+    header,
+    nav,
+    main {
+      border-bottom: 1px solid lightgray;
+    }
+
+    .nav__list {
+      display: flex;
+    }
+
+    .nav__list>li {
+      margin-right: 10px;
+    }
+
+    main {
+      height: 50%;
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+    }
+
+    article {
+      width: 60%;
+    }
+
+    aside {
+      margin-left: 10px;
+      width: 40%;
+      box-sizing: border-box;
+    }
+
+    article>div,
+    aside>div {
+      border: 1px solid lightgray;
+    }
+
+    article>div:nth-child(1) {
+      height: 30%;
+      box-sizing: border-box;
+      margin-bottom: 1%;
+    }
+
+    article>div:nth-child(2) {
+      height: 15%;
+      box-sizing: border-box;
+      margin-bottom: 1%;
+    }
+
+    article>div:nth-child(3) {
+      height: 53%;
+      box-sizing: border-box;
+    }
+
+    aside>div:nth-child(1) {
+      height: 33.3%;
+      box-sizing: border-box;
+      margin-bottom: 1.5%;
+    }
+
+    aside>div:nth-child(2) {
+      height: 30.3%;
+      box-sizing: border-box;
+      margin-bottom: 1.5%;
+    }
+
+    aside>div:nth-child(3) {
+      height: 33.3%;
+      box-sizing: border-box;
+    }
+
+    footer {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="column-25per">
+        <h1>Naver</h1>
+      </div>
+      <div class="column"><input type="text"><i class="fas fa-search"></i></div>
+    </header>
+    <nav>
+      <ul class="nav__list">
+        <li><a href="#">메일</a></li>
+        <li><a href="#">카페</a></li>
+        <li><a href="#">블로그</a></li>
+        <li><a href="#">지식in</a></li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <div class="main-ad">메인광고</div>
+        <div class="news-headline">뉴스헤드라인</div>
+        <div class="news-list">뉴스리스트</div>
+      </article>
+      <aside>
+        <div class="login">로그인</div>
+        <div class="english-panel">영어회화</div>
+        <div class="side-ad">사이트광고</div>
+      </aside>
+    </main>
+    <footer>
+      <h3>Naver footer</h3>
+      <p>Naver ㈜</p>
+    </footer>
+  </div>
+</body>
+
+</html>

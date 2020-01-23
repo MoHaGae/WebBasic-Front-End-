@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Naver</title>
+    <script src="https://kit.fontawesome.com/031722a6cc.js" crossorigin="anonymous"></script>
+    <style>
+        html,
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            width: 1080px;
+            margin: 0px auto;
+        }
+
+        header {
+            display: flex;
+            height: 160px;
+            align-items: center;
+            border-bottom: 1px solid lightgray;
+        }
+
+        nav {
+            border-bottom: 1px solid lightgray;
+        }
+
+        header>a>h1 {
+            width: 200px;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .nav-list {
+            display: flex;
+        }
+
+        .nav-list>li {
+            margin-right: 14px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box>input {
+            width: 470px;
+            height: 47px;
+            margin-right: 15px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="#">
+                <h1>Naver</h1>
+            </a>
+            <div class="search-box">
+                <input type="text" />
+                <i class="fas fa-search fa-2x"></i>
+            </div>
+        </header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">메일</a></li>
+                <li><a href="#">카페</a></li>
+                <li><a href="#">블로그</a></li>
+                <li><a href="#">지식in</a></li>
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <div>메인광고</div>
+                <div>뉴스헤드라인</div>
+                <div>뉴스리스트</div>
+            </article>
+            <aside>
+                <div>로그인</div>
+                <div>금융</div>
+                <div>사이드광고</div>
+            </aside>
+        </main>
+        <footer>
+            <h2>Naver</h2>
+            <p>네이버 ㈜</p>
+        </footer>
+    </div>
+</body>
+
+</html>
