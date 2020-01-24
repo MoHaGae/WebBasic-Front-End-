@@ -1,5 +1,10 @@
 @import "reset.css";
-
+/* 공통부분 */
+.opacity-zero{
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+/* 네비게이션 */
 nav{
     position:fixed;
     top:0;
@@ -13,11 +18,30 @@ nav{
 .nav__largecontainer{
     margin:0px auto;
     display:flex;
-    height:77px;
     max-width: 975px;
-    padding: 20px 28px;
     box-sizing: border-box;
     align-items: center;
+}
+
+.nav-lg{
+    height:77px;
+    transition: height 0.2s ease-in-out;
+}
+.nav-sm{
+    height:52px;
+    transition: height 0.2s ease-in-out;
+}
+
+.nav__largecontainer-lg{
+    height:77px;
+    padding: 20px 20px;
+    transition: height 0.2s ease-in-out;
+}
+
+.nav__largecontainer-sm{
+    height:52px;
+    padding: 0px 20px;
+    transition: height 0.2s ease-in-out;
 }
 
 .nav__logo{
@@ -73,18 +97,11 @@ nav{
 .icons__content:nth-child(1){
     margin-left: 0px;
 }
-html,body{
-    height:100%;
-}
 
 main{
     margin-top: 78px;
     background-color: #fafafa;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-
-body >section{
-    height:100%;
 }
 
 .main__section{
@@ -318,9 +335,12 @@ body >section{
 }
 
 .aside__story{
+    background-color: white;
     border:1px solid rgba(var(--b6a,219,219,219),1);
     border-radius: 4px;
 }
+
+/* 스토리 */
 
 .story__header{
     display:flex;
@@ -395,6 +415,7 @@ body >section{
 
 /* aside__recommend */
 .aside__recommend{
+    background-color: white;
     margin: 12px 0px;
     border:1px solid rgba(var(--b6a,219,219,219),1);
     border-radius: 4px;
