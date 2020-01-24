@@ -1,5 +1,9 @@
 @import "reset.css";
 /* 공통부분 */
+html{
+    background-color:#fafafa;
+}
+
 .opacity-zero{
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
@@ -25,23 +29,23 @@ nav{
 
 .nav-lg{
     height:77px;
-    transition: height 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .nav-sm{
     height:52px;
-    transition: height 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .nav__largecontainer-lg{
     height:77px;
     padding: 20px 20px;
-    transition: height 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .nav__largecontainer-sm{
     height:52px;
     padding: 0px 20px;
-    transition: height 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .nav__logo{
@@ -73,7 +77,7 @@ nav{
 .search__input{
     box-sizing: border-box;
     width:100%;
-    height:100%;
+    outline: 0;
     padding:3px 10px 3px 26px;
     border: solid 1px #dbdbdb;
     height:28px;
