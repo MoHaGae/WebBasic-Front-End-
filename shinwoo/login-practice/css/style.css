@@ -116,7 +116,7 @@ button.ghost:hover{
 .social_icon-container a {
     display:flex;
     border-radius: 20px;
-    border:1px solid #eee;
+    border:1px solid #ddd;
     height: 40px;
     width: 40px;
     justify-content: center;
