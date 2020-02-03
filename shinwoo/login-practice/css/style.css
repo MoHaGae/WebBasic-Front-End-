@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+@import "reset.css";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background:#f1f2f6;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* 
+       @vh단위 설명
+       vh(viewport height) 
+       vh(viewport height) 브라우저 화면 높이값의 100분1의 단위이다.
+       브라우저 높이가 900px일때 1vh는 9px과 같다는 뜻이다.
+       cf) vw(viewport width), https://webdesign.tutsplus.com/ko/articles/7-css-units-you-might-not-know-about--cms-22573?fbclid=IwAR0nYv9L6dd-uUYynz2b8ZSMl9ao0vwGwKJAanp7XAfyfbudFMskZ5DsThA
+    */
+}
+
+span{
+    font-size:12px;
+}
+
+a{
+    color: #333;
+    font-size:14px;
+    text-decoration: none;
+    margin:15px 0px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+p{
+    font-size: 14px;
+    letter-spacing:0.5px;
+    margin:20px 0 30px;
+}
+
+h1{
+    font-size:32px;
+    font-weight: bold;   
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    height:100%;
+    padding:0 50px;
+}
+
+input{
+    background-color: #eee;
+    border:none;
+    padding:12px 15px;
+    margin:8px 0px;
+    width:100%;
+}
+
+button{
+    border-radius: 15px;
+    outline: none;
+    color:#ffffff;
+    font-size:12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 0px;
+    padding:12px 45px;
+    background:rgba(183,58,210,1);
+    background: linear-gradient(167deg, rgba(183,58,210,1) 0%, rgba(255,75,43,1) 50%, rgba(247,228,51,1) 100%);
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+button.ghost{
+    background: transparent;
+    border: 1px solid #fff;
+}
+
+button.ghost:hover{
+    background:#fff;
+    color:#ff4b2b;
+}
+
+.container{
+    overflow: hidden;
+    display:flex;
+    background-color: white;
+    width: 768px;
+    height: 468px;
+    border-radius: 10px;
+    /* border-radius 설명 */
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); 
+    /* box-shadow 설명 */
+}
+
+.form-container{
+    height:100%;
+    width:50%;
+}
+
+.social_icon-container {
+    margin: 20px 0;
+    display: flex;
+}
+
+.social_icon-container a {
+    display:flex;
+    border-radius: 20px;
+    border:1px solid #eee;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    margin:0px 12px;
+    text-decoration: none;
+}
+
+.panel-container{
+    width:50%;
+    height:100%;
+    padding:0 40px;
+    color:#ffffff;
+    background: rgb(183,58,210);
+    background: linear-gradient(167deg, rgba(183,58,210,1) 0%, rgba(255,75,43,1) 50%, rgba(247,228,51,1) 100%);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+}
