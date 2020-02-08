@@ -40,6 +40,12 @@ p{
     font-size: 14px;
     letter-spacing:0.5px;
     margin:20px 0 30px;
+    /* 
+        margin: 값1; => 상,하,좌,우 값1만큼 외부여백이 적용
+        margin: 값1 값2 => 상,하 : 값1만큼, 좌,우s : 값2 적용
+        margin: 값1 값2 값3 =>상 : 값1, 좌우 : 값2, 하 : 값3 적용
+        margin: 값1 값2 값3 값4 => 상 우 하 좌(시계방향) 값1 값2 값3 값4만큼 적용
+    */
 }
 
 h1{
@@ -61,7 +67,7 @@ input{
     border:none;
     padding:12px 15px;
     margin:8px 0px;
-    width:100%;
+    width:100%; 
 }
 
 button{
@@ -98,14 +104,26 @@ button.ghost:hover{
     width: 768px;
     height: 468px;
     border-radius: 10px;
-    /* border-radius 설명 */
+    /* 
+        border-radius 설명
+        https://developer.mozilla.org/ko/docs/Web/CSS/border-radius
+    */
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); 
-    /* box-shadow 설명 */
+    /* 
+        box-shadow 설명 
+        https://www.w3schools.com/cssref/css3_pr_box-shadow.asp    
+        https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow
+    */
 }
     
 .form-container{
     height:100%;
     width:50%;
+    /* 
+        ##panel-container 또는 form-container한쪽 width:50%일때 너비 적용문제 
+        panel-container 또는 form-container한쪽에만 width: 50%를 정하면 width가 정해지지 않은쪽은
+        container내부의 자식요소들의 크기에 맞게 너비가 설정되기 때문에 두 container에 width : 50%를 적용하여야 한다.
+    */
 }
 
 .social_icon-container {
