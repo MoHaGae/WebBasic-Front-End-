@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- -문제1
+호텔이라는 객체를 만들고. 이 호텔객체는 총 40개의 방이 있으며 30개의 방이 예약되있다. 
+화면상에 남은 방의 개수가 나오도록 표현하세요! -->
+
+<body>
+    <div>
+        <p id="information"></p><br>
+        <input type="text" id="room" value="방 입력">
+        <input type="button" value="입력" onclick="reservation()">
+    </div>
+    <script>
+        var hotel = {
+            resv: 0
+        }
+        function reservation() {
+            hotel.resv = document.getElementById('room').value;
+            var info = document.getElementById('information');
+            if (hotel.resv > 40) {
+                info.innerText = "40 이하의 수를 입력하세요."
+            } else {
+                info.innerHTML = 40 - hotel.resv;
+            }
+        }
+    </script>
+</body>
+
+</html>

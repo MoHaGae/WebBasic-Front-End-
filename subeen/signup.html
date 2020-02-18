@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 회원가입을 하려합니다!! 그런데 여기서 아이디를 입력하는데
+    5글자 이상을 적지않으면 "이름은 다섯글자 이상이어야 합니다!" 하는 메시지가 창에 나오게 만들어주시면 됩니다 -->
+<body>
+    <input type="text" id="id" value="">
+    <input type="button" value="login" onclick="login()">
+    <script>
+        function login(){
+            var user = document.getElementById('id').value
+            if(user.length<5){
+                alert("이름은 다섯글자 이상이어야 합니다!");
+            }
+            else {
+                alert("로그인 완료");
+            }
+            
+        }
+    </script>
+</body>
+</html>
