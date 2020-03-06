@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트</title>
+  </head>
+  <body>
+    <!-- 인라인 방식 이벤트 설치 -->
+    <button onclick="alert('ㅎㅇㅎㅇ')">버튼1</button>
+
+    <!-- 프로퍼티 방식 -->
+    <button id="btn2">버튼2</button>
+
+    <!-- addEventListener -->
+    <button id="btn3">버튼3</button>
+
+    <script>
+      const btn2 = document.getElementById("btn2");
+      const btn3 = document.getElementById("btn3");
+
+      // 프로퍼티 방식
+      btn2.onclick = function() {
+        alert("ㅎㅇㅎㅇ2");
+      };
+
+      // addEventListener
+      btn3.addEventListener("click", function() {
+        alert("ㅎㅇㅎㅇ3");
+      });
+    </script>
+  </body>
+</html>

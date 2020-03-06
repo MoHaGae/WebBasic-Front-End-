@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트타입</title>
+  </head>
+  <body>
+    <!-- 
+        # submit
+        submit은 폼의 정보를 서버로 전송하는 명령인 submit시에 일어난다.
+        form 태그에 적용된다.
+        아래 예제는 전송 전에 텍스트 필드에 값이 입력 되었는지를 확인한다. 만약 값이 입력되지 않았다면 전송을 중단한다.
+     -->
+    <h1>submit</h1>
+    <form action="/ex2.html">
+      <input id="input1" name="data" type="text" />
+      <input type="submit" />
+    </form>
+
+    <!-- 
+        #change
+        change는 폼 컨트롤의 값이 변경 되었을 때 발생하는 이벤트다.
+        input(text,radio,checkbox), textarea, select 태그에 적용된다.
+      -->
+    <h1>change</h1>
+    <h2 id="target"></h2>
+    <input id="input2" type="text" onchange="handleChange()" />
+
+    <!-- 
+        focus는 엘리먼트에 포커스가 생겼을 때, blur은 포커스가 사라졌을 때 발생하는 이벤트다. 
+        다음 태그를 제외한 모든 태그에서 발생한다. <base>, <bdo>, <br>, <head>, <html>, <iframe>, 
+            <meta>, <param>, <script>, <style>, <title> 
+    -->
+    <h1>blur,focus</h1>
+    <input id="input3" type="text" />
+
+    <script>
+      const form = document.querySelector("form");
+      const target = document.querySelector("#target");
+      const input1 = document.querySelector("#input1");
+      const input2 = document.querySelector("#input2");
+      const input3 = document.querySelector("#input3");
+
+      //sunmit
+      form.onsubmit = function handleSubmit(e) {
+        if (input1.value.length === 0) {
+          alert("누락된 입력값이 있습니다.");
+          console.log(e);
+          return false;
+        }
+      };
+
+      //change
+      function handleChange() {
+        target.innerText = input2.value;
+      }
+
+      //blur, focus
+      input3.addEventListener("focus", function() {
+        console.log("focus");
+      });
+      input3.addEventListener("blur", function() {
+        console.log("blur");
+      });
+    </script>
+  </body>
+</html>
