@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Json이 없다면...</title>
+  </head>
+  <body>
+    <h1>timezone 리스트</h1>
+    <ul id="lists"></ul>
+    <button id="execute">리스트 불러오기</button>
+    <script>
+      const API_URL = "http://timeapplication.paas-ta.org";
+      const executeBtn = document.querySelector("#execute");
+      const lists = document.querySelector("#lists");
+
+      function handleClickExcute() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", `${API_URL}/timezones/string`);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            const response = xhr.responseText;
+            const responses = response.split(","); // Json이 없으면 번거로운 parsing 과정이 필요하다...
+            let str = ""; // 예제는 단순하지만 복잡한 응답데이터라면??? 헬게이트 오픈...
+            for (let i = 0; i < responses.length; i++) {
+              str += `<li>${responses[i]}</li>`;
+            }
+            lists.innerHTML = str;
+          }
+        };
+        xhr.send();
+      }
+
+      executeBtn.addEventListener("click", handleClickExcute);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json을 POST 요청으로 보내기</title>
+    <style>
+      input {
+        display: block;
+        margin-bottom: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <p id="target"></p>
+    <input type="text" name="name" placeholder="이름" />
+    <input type="email" name="email" placeholder="이메일" />
+    <input type="text" name="phone" placeholder="핸드폰번호" />
+    <input type="submit" value="회원가입" />
+
+    <script>
+      const API_URL = "http://timeapplication.paas-ta.org";
+      const name = document.querySelector("input[name='name']");
+      const email = document.querySelector("input[name='email']");
+      const phone = document.querySelector("input[name='phone']");
+      document
+        .querySelector("input[type='submit']")
+        .addEventListener("click", function(event) {
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", `${API_URL}/person/json`);
+          xhr.onreadystatechange = function() {
+            console.log(xhr.responseText);
+          };
+          // # 기존방식
+          // xhr.setRequestHeader(
+          //   "Content-Type",
+          //   "application/x-www-form-urlencoded"
+          // );
+          // let data = "";
+          // data += `name=${name.value}&email=${email.value}&phone=${phone.value}`;
+
+          // # json으로 보내기
+          let data = new Object();
+          data["name"] = name.value;
+          data["phone"] = phone.value;
+          data["email"] = email.value;
+          xhr.setRequestHeader("Content-Type", "application/json");
+
+          xhr.send(JSON.stringify(data));
+        });
+    </script>
+  </body>
+</html>

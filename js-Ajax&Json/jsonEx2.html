@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Json 짱 편해!~</title>
+  </head>
+  <body>
+    <h1>timezone 리스트</h1>
+    <ul id="lists"></ul>
+    <button id="execute">리스트 불러오기</button>
+    <script>
+      const API_URL = "http://timeapplication.paas-ta.org";
+      const executeBtn = document.querySelector("#execute");
+      const lists = document.querySelector("#lists");
+
+      function handleClickExcute() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", `${API_URL}/timezones/json`);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            const response = xhr.responseText;
+            const json = JSON.parse(response);
+            let str = "";
+            for (let i = 0; i < json.timezones.length; i++) {
+              str += `<li>${json.timezones[i]}</li>`;
+            }
+            lists.innerHTML = str;
+          }
+        };
+        xhr.send();
+      }
+
+      executeBtn.addEventListener("click", handleClickExcute);
+    </script>
+  </body>
+</html>

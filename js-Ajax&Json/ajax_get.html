@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax GET 방식</title>
+  </head>
+  <body>
+    <h1>Ajax GET 방식</h1>
+    <h2>현재시간</h2>
+    <p id="target"></p>
+    <button id="execute">현재시간 불러오기</button>
+    <script>
+      const API_URL = "http://timeapplication.paas-ta.org";
+      const target = document.querySelector("target");
+      const executeBtn = document.querySelector("#execute");
+
+      function handleClickExcute() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", `${API_URL}/time`);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.querySelector("#target").innerHTML = xhr.responseText;
+          }
+        };
+        xhr.send();
+      }
+
+      executeBtn.addEventListener("click", handleClickExcute);
+    </script>
+  </body>
+</html>

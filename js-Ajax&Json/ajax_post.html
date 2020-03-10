@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax POST 방식</title>
+  </head>
+  <body>
+    <h2>현재시간</h2>
+    <p id="target"></p>
+    <select id="timezone">
+      <option value="Asia/Seoul">asia/seoul</option>
+      <option value="America/New_York">America/New_York</option>
+    </select>
+    <input type="button" id="execute" value="execute" />
+    <script>
+      const API_URL = "http://timeapplication.paas-ta.org";
+      document
+        .querySelector("input")
+        .addEventListener("click", function(event) {
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", `${API_URL}/time`);
+          xhr.onreadystatechange = function() {
+            document.querySelector("#target").innerHTML = xhr.responseText;
+          };
+          xhr.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+          );
+          var data = "";
+          data += "timezone=" + document.getElementById("timezone").value;
+          xhr.send(data);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <h1>오늘의 날씨</h1>
+    <p id="weather-content"></p>
+    <script>
+      const API_KEYS = "78877597580a34750c5536bd2adc3fcc";
+      const weatherContent = document.querySelector("#weather-content");
+
+      function renderWeatherContent(json) {
+        weatherContent.innerText = `${json.main.temp}ºC @ ${json.name}`;
+      }
+
+      function getWeather(lon, lat) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(
+          "GET",
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEYS}&units=metric`
+        );
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            const json = JSON.parse(xhr.responseText);
+            renderWeatherContent(json);
+          }
+        };
+        xhr.send();
+      }
+
+      function handleSuccessGetCurrentPosition(position) {
+        const longitude = position.coords.longitude;
+        const latitude = position.coords.latitude;
+        getWeather(longitude, latitude);
+      }
+
+      function handleErrorGetCurrentPosition() {
+        console.log("위치접근 권한을 허용해주세요.");
+      }
+
+      function getCoords() {
+        const s = navigator.geolocation.getCurrentPosition(
+          handleSuccessGetCurrentPosition,
+          handleErrorGetCurrentPosition
+        );
+      }
+
+      function init() {
+        getCoords();
+      }
+
+      init();
+    </script>
+  </body>
+</html>
