@@ -12,12 +12,13 @@
     <button id="execute">현재시간 불러오기</button>
     <script>
       const API_URL = "http://timeapplication.paas-ta.org";
-      const target = document.querySelector("target");
+      const target = document.querySelector("target"); 
       const executeBtn = document.querySelector("#execute");
 
       function handleClickExcute() {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", `${API_URL}/time`);
+      // # `` !== '' ""
+        xhr.open("GET", API_URL + '/time');
         xhr.onreadystatechange = function() {
           if (xhr.readyState === 4 && xhr.status === 200) {
             document.querySelector("#target").innerHTML = xhr.responseText;
