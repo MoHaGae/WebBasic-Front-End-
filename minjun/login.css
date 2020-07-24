@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+@import "reset.css";
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    background-color:#f1f2f6;
+    height:100vh; /*vh(viewport height) 1vh(1%) 100vh(100%)*/
+}
+
+
+#login__wrap{
+    width:350px;
+    height:450px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background-color:white;
+    border-radius:17px;
+}
+
+
+#login__wrap>h2{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.login__caption{
+    width:250px;
+    text-align:left;
+    font-size:0.85rem;
+    color:#24292E;
+    margin-bottom:10px;
+}
+
+.Password__cation{
+    width:250px;
+    text-align:left;
+    font-size:0.85rem;
+    color:#24292E;
+    margin-bottom:10px;
+}
+
+#login__field{
+    width:250px;
+    height:26px;
+    border-width:1px;
+    border-radius:5px;
+    border-color:rgb(0,0,0,0.1);
+    margin-bottom:5px;
+}
+
+#password__field{
+    width:250px;
+    height:26px;
+    border-width:1px;
+    border-radius:5px;
+    border-color:rgb(0,0,0,0.1);
+    margin-bottom:10px;
+}
+
+form>a{
+    font-size:0.7rem;
+    color:#0040FF;
+}
+
+form>h2{
+    margin-bottom:50px;
+}
+
+#nav__board{
+    margin-bottom:10px;
+}
+
+.login__button{
+    width:100px;
+    height:30px;
+    border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer;
+    border-radius:5px;
+    background-color:#5882FA;
+}
+
+button:hover{
+    transform:scale(0.95);
+}
